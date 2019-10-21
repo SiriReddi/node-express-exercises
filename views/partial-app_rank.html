@@ -1,0 +1,17 @@
+<form action ="/add" method="POST">
+<table>
+    ${appdata.map(app_rank => `
+    <tr> 
+        <td class ="app_class">${app_rank.app}</td>
+        <td class ="rank_class">${rankData.map(ranks => `
+            <label>${ranks.ranks}
+                <input type = "radio" name="${app_rank.app}" value="${ranks.id}">
+            </label>
+            `)}
+        `).join('')}
+    </td>  
+    </tr>
+</table>
+    
+<button type="submit">Save</button>
+</form>
